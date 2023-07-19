@@ -2,7 +2,7 @@
 $userExists = Get-LocalUser -Name "TechSupport" -ErrorAction SilentlyContinue
 
 if ($userExists) {
-    # User exists, add to Administrators group
+    # If the user exists, user gets added to "Administrators"
     $groupExists = Get-LocalGroup -Name "Administrators" -ErrorAction SilentlyContinue
 
     if ($groupExists) {
@@ -14,7 +14,7 @@ if ($userExists) {
     }
 }
 else {
-    # User does not exist, create user and add to Administrators group
+    # If the user does not exist, create user and add to Administrators group
     $password = ConvertTo-SecureString -String "C3nterC3nter3909!" -AsPlainText -Force
     New-LocalUser -Name "TechSupport" -Password $password -UserMayNotChangePassword -PasswordNeverExpires
 
