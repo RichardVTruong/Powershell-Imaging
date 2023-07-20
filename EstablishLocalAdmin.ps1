@@ -28,3 +28,5 @@ else {
         Write-Host "The 'Administrators' group does not exist."
     }
 }
+
+# To establish a local admin user with a different name, replace all instances of "TechSupport" with desired name for the local admin user.
